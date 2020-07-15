@@ -1,0 +1,64 @@
+(function ()
+{
+    'use strict';
+
+    angular
+    .module('app.pages.auth.login-v2')
+    .controller('LoginV2Controller', LoginV2Controller);
+
+    /** @ngInject */
+    function LoginV2Controller(api,$scope,Clique,$location,$rootScope,$cookieStore,$http,$window,AuthModel)
+    {
+        // Data
+        $scope.showProgress=false;
+        var vm=this;
+			  var templates=[
+							'app/main/pages/auth/login-v2/templates/template1.html',
+							'app/main/pages/auth/login-v2/templates/template2.html',
+							'app/main/pages/auth/login-v2/templates/template3.html',
+							//'app/main/pages/auth/login-v2/templates/template4.html',
+							];
+			  var size = templates.length
+			  var x = Math.floor(size*Math.random());
+			  $http.get(templates[x]).then(function (response) {
+      			//$scope.pageData = response.data.LOGIN_V2;
+  				//console.log(response);
+				$("#login-v2-intro").html(response.data);
+   				//$scope.tempalteData = response.data;
+   
+  			});
+			  
+			  
+			// $scope.tempalteData = templates[x];
+		//////Random Login left Template//////
+	   //////////////////////////////////////
+	  
+	  
+        // Methods
+          $scope.submit = function() {
+          $scope.showProgress=true;
+          var loginObj={
+            username:vm.form.email,
+            password:vm.form.password
+          };
+		  
+			
+		  $scope.promise = AuthModel.Login(loginObj);
+          $scope.promise.then(function(response) {
+          if (response.statuscode == 0) {
+                $window.location.assign('/apps/dashboard');
+                Clique.showToast(response.statusmessage,'bottom right',"success");
+
+          }
+          else
+              {
+                 $scope.showProgress=false;
+				 Clique.showToast(response.statusmessage,'bottom right',"error");
+              }
+          });
+    };
+        //////////
+       
+
+    }
+})();

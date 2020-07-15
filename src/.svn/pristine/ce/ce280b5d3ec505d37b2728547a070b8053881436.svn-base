@@ -1,0 +1,164 @@
+(function ()
+{
+    'use strict';
+
+    angular
+        .module('app.pages.auth.register-v2')
+        .controller('RegisterV2Controller', RegisterV2Controller);
+
+
+    /** @ngInject */
+    function RegisterV2Controller(api,$scope,Clique,$location,$rootScope,$cookieStore,$http,$window,$state,AuthModel)
+    {
+				var vm=this;
+                $scope.showProgress=false;
+				$scope.disableField= false;
+				
+				
+				//$scope.email = '';
+				//$scope.company = '';
+				//$scope.phone = '';
+				//vm.form.phone = '';
+				//vm.form.phone='5555';
+				$scope.randomNumber=1;
+     			getRandomInt(0, 6);
+				var templates=[
+								'app/main/pages/auth/register-v2/templates/1.png',
+								'app/main/pages/auth/register-v2/templates/2.png',
+								'app/main/pages/auth/register-v2/templates/3.png',
+								'app/main/pages/auth/register-v2/templates/4.png',
+								'app/main/pages/auth/register-v2/templates/5.png',
+								'app/main/pages/auth/register-v2/templates/6.png',
+								'app/main/pages/auth/register-v2/templates/7.png',
+							];
+				function getRandomInt(min, max) {
+          			$scope.randomNumber=Math.floor(Math.random() * (max - min + 1)) + min;
+     			 }
+				 //alert(templates[2])
+				 $scope.backGroundImage = templates[$scope.randomNumber];
+				 
+				
+				 //////////////////////////////////////////////////////////
+				 ////////// If someone invite to join Clique//////////////
+				 var searchObject = $location.search();
+				 if((searchObject.ref_id!=null) && (searchObject.email!=null))
+				 {
+				   $http.defaults.headers.common['Authorization']= "Token "+searchObject.ref_id;	
+				   $scope.disableField=true;
+				   
+				   $http({
+				   method: 'GET',
+				   url: api.baseUrl+api.version+'company',
+				   //url:"http://192.168.1.100:8000/v1/company"
+				   //params: {token: searchObject.token}
+				}).then(function successCallback(response) {
+					
+					var response_data = response.data.data;
+					//console.log(response_data.company.name);
+					if(response.statusmessage != "Failed"){
+						vm.form={
+								company:response_data.company.name,
+								email:searchObject.email,
+								phone:response_data.company.phone,
+								refid:searchObject.token
+							};
+					}else{
+						Clique.showToast(response.statusText,'bottom right','error');	
+						vm.showProgress=false;
+					}
+				  }, function errorCallback(response) {
+						Clique.showResponseError(response);
+			});
+				   
+				   
+				   
+				   
+				  // $scope.form.phone = '123'
+				   //vm.form.phone = '123456';
+					
+					
+				 }
+				 else
+				 {
+					 vm.form={
+								refid:"null"
+							};
+					
+				 }
+   				 
+				
+				
+				$scope.ph_numbr = /^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3}[- ]?\d{4}$/;
+                $scope.submit = function() {
+
+                  $scope.showProgress=true;
+
+                  //Clique.ClearCredentials();
+				if(vm.form.refid=="null")
+				{
+                	var Params={
+						username:vm.form.username,
+						password:vm.form.password,
+						email:vm.form.email,
+						confirm_password:vm.form.passwordConfirm,
+						phone:vm.form.phone,
+						company:vm.form.company
+                  	}
+				}
+				else
+				{
+					var Params={
+						username:vm.form.username,
+						password:vm.form.password,
+						email:vm.form.email,
+						confirm_password:vm.form.passwordConfirm,
+						phone:vm.form.phone,
+						company:vm.form.company,
+						ref_id:vm.form.refid
+                  	}
+					
+				}
+
+				$scope.promise = AuthModel.Signup(Params);
+          		$scope.promise.then(function(response) {
+          			if (response.statuscode == 0) {
+                			$window.location.assign('/apps/dashboard');
+                			Clique.showToast(response.statusmessage,'bottom right',"success");
+          			}
+          			else{
+						 $scope.showProgress=false;
+                		 Clique.showToast(response.statusmessage,'bottom right',"error");
+              		}
+         		 });
+				
+				  //console.log(Params);
+				  //return false;
+                  /*api.account.signup.
+                  save(
+						   {},
+						   Params,
+	
+						   function (response){
+							$scope.showProgress=false;  
+							if(response.statuscode==0)
+							{
+								Clique.showToast(response.statusmessage,'bottom right',"success");
+								console.log(response);
+								$window.location.assign('/apps/dashboard');
+							}
+							else
+							{
+								Clique.showToast(response.statusmessage,'bottom right',"error");	
+							}
+							//$state.go("app.pages_auth_login-v2");
+						  },
+						  function (response){
+							Clique.showToast(response.status+':'+response.statusText,'bottom right','error');
+							$scope.showProgress=false;
+						  }
+                      );*/
+                }
+    }
+
+
+})();

@@ -1,0 +1,328 @@
+<style>
+  md-progress-linear.md-default-theme.md-hue-2.md-accent ._md-bar,
+  md-progress-linear.md-hue-2.md-accent ._md-bar {
+    height: 3px !important;
+
+  }
+
+  md-progress-linear.md-default-theme.md-hue-2.md-accent ._md-container,
+  md-progress-linear.md-hue-2.md-accent ._md-container {
+    height: 3px !important;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li:before {
+    content: "\2713";
+  }
+
+  #over1 {
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 9999;
+    width: 600px;
+    margin: 24px 34px 5px 20px
+  }
+
+  #over2 {
+    background-color: rgba(255, 255, 255, 0.43);
+    z-index: 9999;
+    width: 500px;
+    margin: -2px 25px 5px 94px;
+  }
+
+  #over3 {
+    background-color: rgba(255, 255, 255, 0.68);
+    z-index: 9999;
+    width: 400px;
+    margin: 53px 25px 5px 54px;
+    height: 298px;
+  }
+
+  #over4 {
+    z-index: 9999;
+    width: 600px;
+    margin: 25px 39px 15px 30px;
+  }
+
+</style>
+<!--<div layout="row" layout-align="center center" style="min-height:600px;" class="dashboard-progress" ng-hide="showRegisterPage">
+	<div flex="30">
+		<md-progress-linear md-mode="indeterminate" class="md-accent md-hue-2"></md-progress-linear>
+	</div>
+</div>-->
+<div layout="row" layout-align="center center" style="min-height:650px; background-color:#FFFFFF;"
+  class="dashboard-progress" ng-hide="showRegisterPage">
+  <ms-splash-screen id="splash-screen">
+    <div class="center">
+      <div class="logo">
+        <img src="assets/images/logos/loader.gif">
+      </div>
+      <!-- Material Design Spinner -->
+      <!--<div class="spinner-wrapper">
+            <div class="spinner">
+                <div class="inner">
+                    <div class="gap"></div>
+                    <div class="left">
+                        <div class="half-circle"></div>
+                    </div>
+                    <div class="right">
+                        <div class="half-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+      <!-- / Material Design Spinner -->
+    </div>
+  </ms-splash-screen>
+  <!-- / SPLASH SCREEN -->
+</div>
+<div id="register-v2" layout="row" layout-align="start" ng-show="showRegisterPage">
+  <div id="register-v2-intro" flex hide show-gt-sm
+    style="background: url({{backGroundImage}});background-size:cover;background-position: center;;">
+    <div layout="column" ng-show="testDrive">
+      <div id="over1" layout-padding>
+        <div layout="row" layout-align="start start">
+          <div class="">
+            <img src="{{appLogo}}" width="40">
+            <span class="text1" style="font-size:34px !important;">{{appName}}</span>
+          </div>
+
+        </div>
+        <div class="md-display-1 white-text" layout-align="start start">Speed is the soul of every business</div>
+
+        <div class="md-subtitle white-text2" layout-align="start start"><span class="white-text2"
+            style="font-weight: 200 !important;">Try its free for</span><span class="white-text2"
+            style="font-size:22px;"> 14 days.No credit card</span> <span class="white-text2"
+            style="font-weight: 200 !important;">required.</span></div>
+        <div layout-align="center center">
+          <center>
+            <md-button type="submit" class="md-raised md-accent submit-button"
+              style=" font-size:18px; text-transform:none !important;" ng-href="">
+              Schedule a Demo!</md-button>
+          </center>
+        </div>
+      </div>
+
+
+    </div>
+    <div layout="column" ng-show="billCustomer">
+      <div layout="row" layout-align="start start" layout-padding>
+        <div><img src="{{appLogo}}" width="40" style="margin:5px 0px 0px 15px;"></div>
+        <div style="margin-top:2px;font-size:38px; font-weight:500;">{{appName}}</div>
+      </div>
+
+
+      <div id="over2" layout-align="start start" layout-padding>
+
+        <div class="md-display-1" style="font-weight:300 !important; font-size:26px !important;">BILL YOUR CUSTOMERS
+          NOW.</div>
+        <div class="md-headline" style="font-weight:300 !important; font-size:17px !important;">Send invoices instantly,
+          and get paid on time,while keeping same merchant account and payment processor</div>
+
+
+
+
+      </div>
+
+
+    </div>
+
+    <div layout="column" ng-show="billcustomer2">
+      <div layout="row" layout-align="start start" layout-padding>
+        <div><img src="{{appLogo}}" width="40" style="margin:5px 0px 0px 15px;"></div>
+        <div style="margin-top:2px;font-size:38px; font-weight:500;">{{appName}}</div>
+      </div>
+
+
+      <div id="over4" layout-align="start start" layout-padding>
+
+        <div class="md-display-1"><span style="font-size:30px !important;">Bill Your</span> <span
+            style="font-weight:bold !important; font-size:30px !important;">Customer</span> <span
+            style="font-size:30px !important;">Now</span></div>
+        <div class="" style="font-weight:500 !important; font-size:15px !important;">Send invoices instantly and get
+          paid on time <br />with the same merchant account and payment processor</div>
+
+
+
+
+      </div>
+
+
+    </div>
+
+    <div layout="column" ng-show="invoicingApp">
+
+      <div id="over3" layout-padding>
+        <div layout="row" layout-align="start end" layout-padding style="margin-left:-20px;">
+          <div><img src="{{appLogo}}" width="40" style="margin:5px 0px 0px 15px;"></div>
+          <div style="margin-top:2px;font-size:38px; font-weight:500;">{{appName}}</div>
+        </div>
+        <div class="md-headline">Invoicing app offers builtin invoice email templates that you can customize by putting
+          company logo and address for effectively billing your client</div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+  <div id="register-v2-form-wrapper" class="flex-scrollable md-whiteframe-8dp" layout="column" flex ms-scroll>
+    <div id="register-v2-form">
+      <p>
+        <center><img src="{{appLogo}}" style="width:15%"></center>
+      </p>
+      <br />
+      <div class="title" style="text-align:center;">Create an account</div>
+      <form name="registerForm" novalidate ng-submit="submit()">
+        <md-input-container class="md-block" md-no-float>
+          <input name="username" ng-model="vm.form.username" placeholder="Name *" required>
+          <div ng-messages="registerForm.username.$error" role="alert">
+            <div ng-message="required">
+              <span>Name field is required</span>
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" md-no-float>
+          <input type="email" ng-disabled="disableField" name="email" ng-model="vm.form.email" placeholder="Email *"
+            ng-pattern="/^.+@.+\..+$/" required>
+          <div ng-messages="registerForm.email.$error" role="alert" multiple>
+            <div ng-message="required">
+              <span translate="REGISTER_V2.ERRORS.EMAIL_REQUIRED">Email field is required</span>
+            </div>
+            <div ng-message="pattern">
+              <span translate="REGISTER_V2.ERRORS.EMAIL_MUST_VALID">Email must be a valid e-mail address</span>
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" md-no-float>
+          <input type="text" name="company" ng-disabled="disableField" ng-model="vm.form.company"
+            placeholder="Company Name *" required>
+          <div ng-messages="registerForm.company.$error" role="alert" multiple>
+            <div ng-message="required">
+              <span>Company field is required</span>
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" md-no-float>
+          <input type="text" ng-disabled="disableField" name="phone" ng-model="vm.form.phone" placeholder="Phone *"
+            ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
+          <div ng-messages="registerForm.phone.$error" role="alert" multiple>
+            <div ng-message="required">
+              <span>Phone field is required</span>
+            </div>
+            <div ng-message="pattern">
+              <span>Phone must be a valid.</span>
+            </div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" md-no-float>
+          <!-- <input type="password" name="password" ng-model="vm.form.password" placeholder="Password *" ng-model-options="{allowInvalid: true}" pattern-validator="((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})" required>-->
+          <input type="password" name="password" ng-model="vm.form.password" placeholder="Password *" required>
+
+          <!--<meter min="0" max="4" value="{{v()}}"></meter>
+					<password-strength ng-model="vm.form.password"></password-strength>	 -->
+          <div ng-messages="registerForm.password.$error" role="alert">
+            <div ng-message="required">
+              <span translate="REGISTER_V2.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
+            </div>
+            <div ng-message="pattern">
+              <span>Password must be a follow the criteria.</span>
+            </div>
+          </div>
+
+
+
+        </md-input-container>
+
+        <md-input-container class="md-block" md-no-float>
+          <input type="password" name="passwordConfirm" ng-model="vm.form.passwordConfirm"
+            placeholder="Password (Confirm) *" valid-password-c="vm.form.password" required>
+          <div ng-messages="registerForm.passwordConfirm.$error" role="alert" multiple>
+            <div ng-message="required">
+              <span translate="REGISTER_V2.ERRORS.PASSWORD_CONFIRM_REQUIRED">Password (Confirm) field is required</span>
+            </div>
+
+            <div
+              ng-show="registerForm.password.$viewValue != '' && (registerForm.password.$viewValue != registerForm.passwordConfirm.$viewValue)">
+              <span>Password not match</span>
+            </div>
+
+
+          </div>
+        </md-input-container>
+        <div class="container">
+          <div id="recaptcha"></div>
+        </div>
+        <div class="terms" layout="row" layout-align="center center">
+          <md-checkbox name="terms" ng-model="data.cb1" aria-label="I read and accept" required></md-checkbox>
+          <div layout="row" layout-sm="column" layout-align="start center">
+            <span translate="REGISTER_V2.READ_ACCEPT">I read and accept</span>
+            <a href="{{termAndConditions}}" class="md-accent-color" translate="REGISTER_V2.TERMS_COND"
+              target="_blank">Terms and Conditions</a>
+          </div>
+        </div>
+
+        <input type="hidden" name="refid" ng-model="vm.form.refid">
+
+        <md-button type="submit" class="md-raised md-accent submit-button" aria-label="CREATE MY ACCOUNT"
+          ng-disabled="registerForm.$invalid || registerForm.$pristine" translate="REGISTER_V2.CREATE_ACCOUNT"
+          translate-attr-aria-label="REGISTER_V2.CREATE_ACCOUNT">
+          CREATE MY ACCOUNT
+        </md-button>
+      </form>
+
+      <div class="login" layout="row" layout-sm="column" layout-align="center center">
+        <span class="text" translate="REGISTER_V2.ALREADY_HAVE">Already have an account?</span>
+        <a class="link" ui-sref="app.pages_auth_login-v2" translate="REGISTER_V2.LOGIN">Log in</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  //6LfBvAoUAAAAAJDB99ka1g7eZkGMdl1FFKgXFij-   local
+
+  //6LcAZQcUAAAAAF872SNxfwLrFF_MTnCTCtXeCtLv   live
+  //6LfHVS0UAAAAAKcOvmhQ8THUE236UMrjqx5g4Y-8
+  function createRecaptcha() {
+    grecaptcha.render("recaptcha", {
+      sitekey: "6Lf2C0oUAAAAAKABRaIgS0r0OavnOYPFFY4OEpJn",
+      theme: "light",
+      'expired-callback': expCallback
+    });
+  }
+  createRecaptcha();
+
+  function expCallback() {
+    window.location = "http://apps.clique.center/apps/account/register";
+  }
+
+</script>
+
+<style>
+  .rc-anchor-pt {
+    display: none;
+  }
+
+  #recaptcha {
+    display: inline-block;
+    position: relative;
+  }
+
+  #recaptcha:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 3px;
+    right: 5px;
+    width: 100px;
+    height: 70px;
+    background-color: #f9f9f9;
+  }
+
+</style>

@@ -1,0 +1,66 @@
+(function ()
+{
+    'use strict';
+
+    angular
+    .module('app.pages.auth.login-v2')
+    .controller('LoginV2Controller', LoginV2Controller);
+
+    /** @ngInject */
+    function LoginV2Controller(api,$scope,Clique,$location,$rootScope,$cookieStore,$http,$window,AuthModel)
+    {
+        // Data
+        $scope.showProgress=false;
+        var vm=this;
+			  
+		$scope.randomNumber=1;
+		getRandomInt(0, 6);
+		var templates=[
+						'assets/images/backgrounds/registerbackground/1.jpg',
+						'assets/images/backgrounds/registerbackground/2.jpg',
+						'assets/images/backgrounds/registerbackground/3.jpg',
+						'assets/images/backgrounds/registerbackground/4.jpg',
+						'assets/images/backgrounds/registerbackground/5.jpg',
+						'assets/images/backgrounds/registerbackground/6.jpg',
+						'assets/images/backgrounds/registerbackground/7.jpg',
+					];
+		function getRandomInt(min, max) {
+			$scope.randomNumber=Math.floor(Math.random() * (max - min + 1)) + min;
+		 }
+		 //alert(templates[2])
+		 $scope.backGroundImage = templates[$scope.randomNumber];		  
+			  
+			  
+			// $scope.tempalteData = templates[x];
+		//////Random Login left Template//////
+	   //////////////////////////////////////
+	  
+	  
+        // Methods
+          $scope.submit = function() {
+          $scope.showProgress=true;
+          var loginObj={
+            username:vm.form.email,
+            password:vm.form.password
+          };
+		  
+			
+		  $scope.promise = AuthModel.Login(loginObj);
+          $scope.promise.then(function(response) {
+          if (response.statuscode == 0) {
+                $window.location.assign('/apps/dashboard');
+                Clique.showToast(response.statusmessage,'bottom right',"success");
+
+          }
+          else
+              {
+                 $scope.showProgress=false;
+				 Clique.showToast(response.statusmessage,'bottom right',"error");
+              }
+          });
+    };
+        //////////
+       
+
+    }
+})();

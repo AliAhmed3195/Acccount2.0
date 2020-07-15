@@ -1,0 +1,179 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abel">
+
+<!--<div id="DIV_1">
+	<div id="DIV_2">
+		<span id="SPAN_3"><img src="assets/images/logos/clique.png"></span> <span id="SPAN_4">Clique</span>
+		<div id="DIV_5">
+			<p id="P_6">
+				Test-drive the world&#39;s #1 Business solution.
+			</p></div></div>
+			<div class="contenta">
+			<p id="P_7">
+				Grow sales by an average of 37% when you tap into the power of Sales Cloud.
+			</p>
+<p id="P_8">
+				Grow sales by an average of 37% when you tap into the power of Sales Cloud.
+			</p></div>
+				
+	
+	<div id="DIV_9">
+		<img src="/login-messages/assets/images/login-bg-man-tablet.jpg" id="IMG_10" alt='' />
+	</div>
+</div>-->
+<style>
+#login-v2{
+    background-image: url(assets/images/backgrounds/signup2.jpg) !important;
+
+ }
+ .tryfree {
+    margin-left: 33%;
+    margin-top: -3%;
+}
+.contenta {
+    margin-top: -4%;
+    margin-left: 14%;
+}
+#DIV_1 {
+    bottom: 0px;
+    /*height: 612px;*/
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    perspective-origin: 336.5px 306px;
+    transform-origin: 336.5px 306px;
+    font: normal normal normal normal 16px / 16px "Times New Roman";
+    overflow: hidden;
+}/*#DIV_1*/
+
+#DIV_2 {
+    height: 297px;
+    width: 100%;
+    perspective-origin: 336.5px 208.5px;
+    transform-origin: 336.5px 208.5px;
+    font: normal normal normal normal 16px / 16px "Times New Roman";
+    padding: 60px 40px;
+}/*#DIV_2*/
+
+#SPAN_3 {
+    background-position: 0px 0px;
+    display: inline-block;
+    height: 122px;
+    vertical-align: middle;
+   /* width: 45px;*/
+    perspective-origin: 22.5px 22.5px;
+    transform-origin: 22.5px 22.5px;
+    font: normal normal normal normal 16px / 16px "Times New Roman";
+}/*#SPAN_3*/
+
+#SPAN_4 {
+    color:#FFFFFF;
+    letter-spacing: 0.5px;
+    /*text-transform: uppercase;*/
+    column-rule-color: rgb(78, 116, 139);
+    border: 0px none rgb(78, 116, 139);
+    font: normal normal normal normal 36px / 22.5px SalesforceSansBold, Arial, sans-serif;
+    margin: 0px 0px 24px;
+    outline: rgb(78, 116, 139) none 0px;
+    padding: 0px 0px 0px 10px;
+}/*#SPAN_4*/
+
+#DIV_5 {
+    height: 242px;
+    width: 100%;
+    margin-left: 9%;
+    perspective-origin: 177.891px 121px;
+    transform-origin: 177.891px 121px;
+    font: normal normal normal normal 16px / 16px "Times New Roman";
+}/*#DIV_5*/
+
+#P_6 {
+    color:#FFFFFF;
+    height: 84px;
+    width: 100%;
+    column-rule-color: rgb(34, 34, 34);
+    perspective-origin: 177.891px 42px;
+    transform-origin: 177.891px 42px;
+    border: 0px none rgb(34, 34, 34);
+    font-family: abel;
+    font-size: 260%;
+    margin: 10px 0px 0px;
+    outline: rgb(34, 34, 34) none 0px;
+}/*#P_6*/
+
+#P_7 {
+	/*color: #FFFFFF;*/
+	color: #FFFFFF;
+	width: 100%;
+    column-rule-color: rgb(34, 34, 34);
+    perspective-origin: 133.422px 37px;
+    transform-origin: 133.422px 37px;
+    border: 0px none rgb(34, 34, 34);
+    font: normal normal normal normal 18px / 23.4px SalesforceSansLight, Arial, sans-serif;
+    margin: 0px 0px 40px;
+    outline: rgb(34, 34, 34) none 0px;
+    padding: 5px 0px 0px;
+}/*#P_7*/
+#P_8 {
+    color: #FFFFFF;
+	width: 100%;
+    column-rule-color: rgb(34, 34, 34);
+    perspective-origin: 133.422px 37px;
+    transform-origin: 133.422px 37px;
+    border: 0px none rgb(34, 34, 34);
+    font: normal normal normal normal 18px / 23.4px SalesforceSansLight, Arial, sans-serif;
+    margin: 0px 0px 40px;
+    outline: rgb(34, 34, 34) none 0px;
+    margin-top: -3%;
+}/*#P_7*/
+
+#A_8 {
+    color: rgb(0, 112, 210);
+    display: inline-block;
+    height: 18px;
+    text-decoration: none;
+    width: 72.0625px;
+    column-rule-color: rgb(0, 112, 210);
+    perspective-origin: 61.0313px 22px;
+    transform-origin: 61.0313px 22px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(216, 221, 230);
+    border-radius: 4px 4px 4px 4px;
+    font: normal normal normal normal 14px / 18.2px SalesforceSansRegular, Arial, sans-serif;
+    outline: rgb(0, 112, 210) none 0px;
+    padding: 12px 24px;
+}/*#A_8*/
+
+#DIV_9 {
+    bottom: 0px;
+    height: 612px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 673px;
+    z-index: -999998;
+    perspective-origin: 336.5px 306px;
+    transform-origin: 336.5px 306px;
+    font: normal normal normal normal 16px / 16px "Times New Roman";
+    overflow: hidden;
+}/*#DIV_9*/
+
+#IMG_10 {
+    bottom: -114.625px;
+    display: block;
+    height: 841.25px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: -114.625px;
+    width: 673px;
+    z-index: -999999;
+    perspective-origin: 336.5px 420.625px;
+    transform-origin: 336.5px 420.625px;
+    font: normal normal normal normal 16px / 16px "Times New Roman";
+}/*#IMG_10*/
+
+
+</style>

@@ -1,0 +1,20 @@
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+
+.page-layout.carded.fullwidth > .center .header {
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    padding: 24px !important;
+}
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

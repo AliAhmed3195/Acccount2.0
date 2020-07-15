@@ -1,0 +1,45 @@
+<div id="login-v2" layout="row" layout-align="start">
+    <div id="login-v2-intro" flex hide show-gt-sm style="background: url({{backGroundImage}});background-size:cover;">
+    </div>
+    <div id="login-v2-form-wrapper" class="flex-scrollable md-whiteframe-6dp" ms-scroll>
+        <div id="login-v2-form">
+           <center><img src="assets/images/logos/clique.png"></center>
+
+            <div class="title" translate="LOGIN_V2.TITLE" style="text-align:center;">Log in to your clique account</div>
+            <div class="description" translate="LOGIN_V2.DESCRIPTION">Sed mollis velit facilisis facilisis viverra</div>
+
+            <form name="loginForm" novalidate ng-submit="submit()">
+                <md-progress-linear md-mode="indeterminate" ng-show="showProgress"></md-progress-linear>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="vm.form.email" placeholder="Email"
+                           translate translate-attr-placeholder="LOGIN_V2.EMAIL"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="loginForm.email.$error" role="alert" multiple>
+                        <div ng-message="pattern">
+                            <span translate="LOGIN_V2.ERRORS.EMAIL_MUST_VALID">Email must be a valid e-mail address</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="vm.form.password" placeholder="Password"
+                           translate translate-attr-placeholder="LOGIN_V2.PASSWORD"
+                           required>
+                </md-input-container>
+                
+                <div class="remember-forgot-password" layout="row" layout-sm="column" layout-align="space-between center">
+
+					   <span style="margin-top:-10px"> <ipp:login href="https://apps.clique.center/openid/login/intuit/" type="horizontal"></ipp:login></span>
+					   <a ui-sref="app.pages_auth_forgot-password" class="forgot-password md-accent-color">Forgot your password?</a>
+                </div>
+				
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine" translate="LOGIN_V2.LOG_IN" translate-attr-aria-label="LOGIN_V2.LOG_IN">LOG IN</md-button>
+            </form>
+            <div class="register" layout="row" layout-sm="column" layout-align="center center" style="width:285px;">
+                <span class="text" translate="LOGIN_V2.DONT_HAVE_ACCOUNT">Don't have an account?</span>
+               	<a class="link" ui-sref="app.pages_auth_register-v2" translate="LOGIN_V2.CREATE_ACCOUNT">Sign up!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://appcenter.intuit.com/Content/IA/intuit.ipp.anywhere-1.3.3.js"></script>

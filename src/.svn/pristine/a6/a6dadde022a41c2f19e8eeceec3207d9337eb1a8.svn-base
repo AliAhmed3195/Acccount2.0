@@ -1,0 +1,48 @@
+<div id="forgot-password" class="flex-scrollable" layout="column" ms-scroll style="background: url({{backGroundImage}});background-size:cover;">
+    <div id="forgot-password-form-wrapper" layout="column" layout-align="center center">
+        <div id="forgot-password-form" class="md-whiteframe-8dp">
+            <img src="assets/images/logos/clique.png">
+
+            <div class="title" translate="FORGOTPASSWORD.TITLE">Recover your password</div>
+
+            <form name="forgotPasswordForm" novalidate ng-submit="submit();">
+                <md-progress-linear md-mode="indeterminate" ng-show="showProgress"></md-progress-linear>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="vm.form.email" placeholder="Email address"
+                           translate translate-attr-placeholder="FORGOTPASSWORD.EMAIL_ADRESS"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="forgotPasswordForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span translate="FORGOTPASSWORD.ERRORS.EMAIL_REQUIRED">Email field is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span translate="FORGOTPASSWORD.ERRORS.EMAIL_MUST_VALID">Email must be a valid e-mail address</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="RESET MY PASSWORD"
+                           ng-disabled="forgotPasswordForm.$invalid || forgotPasswordForm.$pristine"
+                           translate="FORGOTPASSWORD.SEND_RESET_LINK"
+                           translate-attr-aria-label="FORGOTPASSWORD.SEND_RESET_LINK">
+                    SEND RESET LINK
+                </md-button>
+            </form>
+
+            <div class="login" layout="row" layout-align="center center">
+                <!--<a class="link" ui-sref="app.pages_auth_login-v2" translate="FORGOTPASSWORD.GO_BACK">Log In</a>-->
+				<a class="link" ui-sref="app.pages_auth_login-v2">Log In</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+/*var image = new Array ();
+image[0] = "assets/images/backgrounds/forget.jpg";
+image[1] = "assets/images/backgrounds/forget1.jpg";
+image[2] = "assets/images/backgrounds/forget2.jpg";
+var size = image.length
+var x = Math.floor(size*Math.random())
+
+$('#forgot-password').css('background-image', 'url("'+image[x]+'")');*/
+</script>

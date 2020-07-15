@@ -1,0 +1,65 @@
+<!doctype html><html ng-app="fuse"><head><base href="/apps/account/"><meta charset="utf-8"><meta name="description" content=""><meta
+ name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta 
+http-equiv="Content-Security-Policy"><title>Customer Portal</title><link id="favIcon" rel="icon" type="image/ico" 
+href=""><script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script><script 
+src="https://use.fontawesome.com/8b73cdc35b.js"></script><link rel="stylesheet" href="styles/vendor-d7f53a6b60.css">
+<link rel="stylesheet" href="styles/app-58798c2a3d.css"><link rel="stylesheet" type="text/css" 
+href="assets/icons/css/font-awesome.css"><link rel="stylesheet" type="text/css" 
+href="https://fonts.googleapis.com/css?family=Work Sans"></head>
+<!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+<body md-theme="default" md-theme-watch ng-controller="IndexController as vm" class="{{state.current.bodyClass}}">
+<ms-splash-screen id="splash-screen"><div class="center"><div class="logo"><img 
+src="https://apps.clique.center/apps/common/assets/images/clique_loading.gif"></div></div></ms-splash-screen><div 
+id="main" class="animate-slide-up" ui-view="main" layout="column"></div><ms-theme-options></ms-theme-options><script 
+src="scripts/vendor-887514dd59.js"></script><script src="scripts/app-ddb19e9605.js"></script><script 
+type="text/javascript" src="https://apps.clique.center/apps/common/assets/js/clique.js"></script><script 
+src="bower_components/jquery/dist/jquery.js"></script><script src="bower_components/pdf.js-viewer/pdf.js"></script>
+<link rel="stylesheet" href="bower_components/pdf.js-viewer/viewer.css"><script 
+src="bower_components/angular/angular.js"></script><script 
+src="bower_components/angular-pdfjs-viewer/dist/angular-pdfjs-viewer.js"></script><style>
+.splash {
+      margin-left: 45% !important;
+    }
+
+    @media only screen and (max-width: 400px) {
+      .splash {
+
+        margin-left: 34%;
+      }
+
+    }
+
+
+    @media only screen and (max-width: 800px) {
+      .splash {
+        margin-left: 42%;
+      }
+    }
+
+    @media only screen and (max-width: 320px) {
+      .checkbox.custom {
+        width: 21%;
+      }
+
+      .splash {
+        margin-left: 39%;
+        width: 63px;
+      }
+
+    }
+
+    @media only screen and (max-width: 300px) {
+      .splash {
+        margin-left: 37%;
+        width: 69px;
+        ;
+      }
+    }
+
+    .text-truncate {
+      width: 100%;
+    }
+</style></body></html>

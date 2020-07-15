@@ -1,0 +1,108 @@
+{
+    "data": [
+        {
+            "title": "Invoicing",
+            "url": "/Invoicing",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/invoice.png",
+                    "alt": "Invoicing App"
+                }
+            }
+        },
+        {
+            "title": "Settings",
+            "url": "/Settings",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/settings.png",
+                    "alt": "Settings"
+                }
+            }
+        },
+        {
+            "title": "Customers",
+            "url": "/Customer",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/customer.png",
+                    "alt": "Contacts"
+                }
+            }
+        },
+        {
+            "title": "Point of Sales",
+            "url": "/pos",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/pos.png",
+                    "alt": "Point of Sales"
+                }
+            }
+        },
+         {
+            "title": "Inventory",
+            "url": "/inventory",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/inventory.png",
+                    "alt": "Inventory"
+                }
+            }
+        }
+        ,
+         {
+            "title": "Sales",
+            "url": "/sales",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/sales.png",
+                    "alt": "Sales"
+                }
+            }
+        }
+        ,
+         {
+            "title": "Payments",
+            "url": "/payments",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/payment.png",
+                    "alt": "Sales"
+                }
+            }
+        }
+        ,
+         {
+            "title": "Employee",
+            "url": "/employee",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/employee.png",
+                    "alt": "Sales"
+                }
+            }
+        },
+         {
+            "title": "Erp",
+            "url": "/erp",
+            "text": "",
+            "media": {
+                "image": {
+                    "src": "assets/images/appicons/erp.png",
+                    "alt": "Sales"
+                }
+            }
+        }
+        
+
+    ]
+}
